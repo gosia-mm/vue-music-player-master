@@ -1,0 +1,373 @@
+@import './animations.css';
+@import './fonts.css';
+
+* {
+  user-select: none;
+  overflow-wrap: break-word;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Lato, sans-serif;
+  background: rgb(223,131,241);
+  background: linear-gradient(90deg, rgba(223,131,241,1) 0%, rgba(130,39,159,1) 35%, rgba(83,207,224,1) 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  -webkit-font-smoothing: antialiased;
+}
+
+.player {
+  width: 310px;
+  height: 430px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #eeeff5;
+  border-radius: 35px;
+  animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.player > img {
+  width: 116%;
+  height: 340px;
+  margin-left: -25px;
+  margin-top: -25px;
+  border-radius: 35px 35px 0px 0px;
+}
+
+.player .header {
+  background-color: #60558f90;
+  width: 100%;
+  border-radius: 35px 35px 0px 0px;
+  z-index: 2;
+  position: absolute; 
+  top: 0px; 
+  left: 0px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player .header > button {
+  color: #fff;
+  padding: 2%;
+}
+
+.open-playlist {
+  position: absolute;
+  right: 20px;
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.0);
+}
+
+.song-details {
+  background-color: #60558f90;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  z-index: 2;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-top: -62px;
+  position: absolute;
+  width: 100%;
+}
+
+.animated {
+  animation: appear-smoothly 1s normal both;
+  transition: all 0.3s; 
+}
+
+.cover {
+  height: 340px;
+  width: 100%;
+  box-shadow: 0 24px 35px -16px rgba(107,179,237,.5);
+  border-radius: 35px;
+}
+
+.cover-image {
+  padding: 0px;
+  top: 0px; 
+  left: 0px;
+  z-index: 1;
+}
+
+.song-title {
+  color: #fff;
+  font-size: 1.13em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.artist {
+  font-family: Muli;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+}
+
+.details {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.details > .song-title {
+  color: #554a86;
+  font-size: inherit;
+  text-align: left;
+}
+
+.details > .duration-and-artist {
+  color: #78747f;
+  text-align: left;
+  font-size: 11px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+
+.playlist {
+  width: 360px;
+  height: 480px;
+  border-radius: 35px;
+  animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  background-color: #eeeff5;
+}
+
+.play-pause-progress {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.play,
+.pause {
+  background-color: #60558f;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.next,
+.prev {
+  background-color: #60558f;
+  border: 0;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color .2s;
+  position: relative;
+}
+
+.controls .share {
+  background-color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #60558f;
+  transition: background-color .2s;
+  position: relative;
+  margin-right: 40px;
+}
+
+.controls .like {
+  background-color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #ed5e74;
+  transition: background-color .2s;
+  position: relative;
+  margin-left: 40px;
+}
+
+
+.playlist h3 {
+  color: #554a86;
+  font-size: 18px;
+  font-weight: 2000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 100px;
+}
+
+.playlist .song {
+  display: flex;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.playlist .header {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  max-height: 8%;
+}
+
+.playlist .header .back {
+  border: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  color: #554a86;
+  transition: background-color .2s;
+  position: relative;
+}
+
+.playlist .songlist {
+  overflow-y: auto;
+  max-height: 75%;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+}
+
+.actions > .share, .like {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.actions > .share {
+  color: #554a86;
+}
+
+.actions > .like {
+  color: #ed5e74;
+}
+
+.onplaylist:hover {
+  background-color: #fff;
+}
+
+li {
+  border-top: 1px solid #ddd;
+  padding: 5px;
+
+}
+
+li:first-child {
+  border-top: 0;
+}
+
+.volume-bar {
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-top: -10px;
+}
+
+.playlist .song:hover {
+  background-color: #cccbcb;
+  transition: box-shadow .2s,background-color .3s;
+}
+
+.timer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#app {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    height: 100%;
+    margin-top: 10px;
+  }
+
+  .playlist {
+    max-height: 200px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
