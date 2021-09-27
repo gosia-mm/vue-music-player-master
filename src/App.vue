@@ -96,8 +96,8 @@
 import { formatTimer } from "./helpers/timer";
 import { deleteElement, threatSongs, shuffleArray } from "./helpers/utils";
 import songs from "./mocks/songs";
-import VueSlider from 'vue-slider-component'
-import 'vue-slider-component/theme/antd.css'
+import VueSlider from "vue-slider-component";
+import "vue-slider-component/theme/antd.css";
 
 export default {
   components: { VueSlider },
@@ -153,7 +153,7 @@ export default {
       this.isPlaying = true;
       this.setCover();
       this.listenersWhenPlay();
-      this.closePlaylist()
+      this.closePlaylist();
     },
     pause() {
       this.isPlaying = false;
@@ -191,14 +191,14 @@ export default {
     },
     closePlaylist() {
       this.openedPlaylist = false;
-    },
+    }
   },
   mounted() {
     this.songs = threatSongs(this.songs);
     this.current = this.songs[this.index];
     this.openedPlaylist = false;
     this.value = 20;
-  },
+  }
 };
 </script>
 
